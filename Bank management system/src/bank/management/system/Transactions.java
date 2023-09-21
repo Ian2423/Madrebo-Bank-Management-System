@@ -67,9 +67,7 @@ public class Transactions extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    Transactions() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
     
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == exit) {
@@ -83,6 +81,9 @@ public class Transactions extends JFrame implements ActionListener {
         } else if (ae.getSource() == fastcash) {
             setVisible(false);
             new FastCash(pinnumber).setVisible(true);
+        } else if (ae.getSource()== pinchange) {
+            setVisible(false);
+            new PinChange(pinnumber).setVisible(true);
         }
     }
     public static void main(String args[]) {

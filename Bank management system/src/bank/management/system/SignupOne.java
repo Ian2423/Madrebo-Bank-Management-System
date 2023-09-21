@@ -1,9 +1,9 @@
 package bank.management.system;
 
-import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
+import com.toedter.calendar.JDateChooser;
 import java.awt.event.*;
 
 public class SignupOne extends JFrame implements ActionListener{
@@ -94,7 +94,7 @@ public class SignupOne extends JFrame implements ActionListener{
         other.setBackground(Color.white);
         add(other);
         
-        maritalgroup = new ButtonGroup ();
+        maritalgroup =new ButtonGroup ();
         maritalgroup.add(married);
         maritalgroup.add(unmarried);
         maritalgroup.add(other);
@@ -200,7 +200,9 @@ public class SignupOne extends JFrame implements ActionListener{
                 Conn c = new Conn();
                 String query = "insert into signup values('"+formno+"', '"+name+"', '"+dob+"', '"+email+"', '"+marital+"', '"+address+"', '"+city+"', '"+state+"', '"+pin+"')";
                 c.s.executeUpdate(query);
-               
+                
+                setVisible(false);
+                new SignupTwo().setVisible(true);
             }
             
             
@@ -224,3 +226,4 @@ public class SignupOne extends JFrame implements ActionListener{
 
 
 }
+

@@ -1,4 +1,4 @@
-package bank.management.system;
+ package bank.management.system;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,7 +77,7 @@ public class FastCash extends JFrame implements ActionListener {
             String amount = ((JButton)ae.getSource()).getText().substring(3); // $500
             Conn c = new Conn();
             try {
-                ResultSet $ = c.s.executeQuery("select * from bank where pin = '"+pinnumber+"'");
+                ResultSet $ = c.s.executeQuery("select * from bank where pinnumber = '"+pinnumber+"'");
                 int balance = 0;
                 while($.next()) {
                     if ($.getString("type").equals("Deposit")) {
@@ -95,7 +95,7 @@ public class FastCash extends JFrame implements ActionListener {
                 Date date = new Date();
                 String query = "Insert into bank values('"+pinnumber+"', '"+date+"', 'Withdrawal', '"+amount+"')";
                 c.s.executeUpdate(query);
-                JOptionPane.showMessageDialog(null, "$ "+ amount + " Debited Successfully");
+                JOptionPane.showMessageDialog(null, "$"+ amount + " Debited Successfully");
                 
                 setVisible(false);
                 new Transactions(pinnumber).setVisible(true);
