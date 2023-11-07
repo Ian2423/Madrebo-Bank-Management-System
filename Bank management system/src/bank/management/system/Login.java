@@ -95,7 +95,7 @@
                     new Transactions(pinnumber).setVisible(true); 
                 }
                 else {
-                    JOptionPane.showMessageDialog(null, "cap");
+                    JOptionPane.showMessageDialog(null, "Cap");
                 
                 }
                 
